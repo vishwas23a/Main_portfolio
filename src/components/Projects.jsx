@@ -10,6 +10,11 @@ import guessNumber from "../components/GuessNumber.png";
 import star from "../components/star.png";
 
 export default function Projects() {
+  const [codeTech, setCodeTech]=useState("")
+  const [roadTech, setRoadTech]=useState("")
+  const [portfolioTech, setPortfolioTech]=useState("")
+  const [calculatorTech,setCaluculatorTech]=useState("")
+  const [apiTech, setApiTech]=useState("")
   const [codeCom, setCodeCom] = useState(0);
   const [roadMap,setRoadmap]=useState(0);
   const [portfolio,setPortfolio]=useState(0);
@@ -17,7 +22,21 @@ export default function Projects() {
   const [apifun,setApifun]=useState(0);
   const [count ,setCount]=useState(0);
 
-
+  const codeTechFun=()=>{
+    setCodeTech("ReactJS,MongoDB")
+  }
+  const roadTechFun=()=>{
+    setRoadTech("ReactJS")
+  }
+  const portfolioTechFun=()=>{
+setPortfolioTech("HTML,CSS,JS")
+  }
+  const calculatorTechFun =()=>{
+    setCaluculatorTech("HTML,CSS,JS")
+  }
+  const apiTechFun=()=>{
+    setApiTech("ReactJS")
+  }
   const codeComVisit = () => {
     window.open("https://codecom01.netlify.app");
     setCodeCom(codeCom+1)
@@ -79,7 +98,7 @@ setPortfolio(portfolio+1);
 
             <div className=" h-full w-full flex flex-wrap justify-evenly gap-5  ">
               {/* CodeCom */}
-              <div className="h-80 w-72   bg-gradient-to-r from-blue-800 shadow-md shadow-blue-950 rounded-md transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-105 ">
+              <div className="h-96 w-72   bg-gradient-to-r from-blue-800 shadow-md shadow-blue-950 rounded-md transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-105 ">
                 <div className=" h-3/5 rounded-md">
                   <img
                     src={projectImg}
@@ -93,7 +112,12 @@ setPortfolio(portfolio+1);
                     Visit: <span className="text-blue-950">{codeCom}</span>
                   </h3>
                 </div>
-                <div className="flex justify-between mx-3 mt-10">
+                <div className=" flex justify-between mx-3 mt-4 text-white">
+                  <a onClick={codeTechFun}>
+                  <h3 className="text-white hover:text-orange-500 font-bold cursor-pointer ">Tech Used{'>'}</h3></a>
+                 <div> <p className= "text-sm">{codeTech}</p></div>
+                </div>
+                <div className="flex justify-between mx-3 mt-7">
                   <button
                     onClick={codeComVisit}
                     class="flex items-center  bg-blue-500 text-white gap-1 px-4 py-1 cursor-pointer font-semibold tracking-widest rounded-md hover:bg-blue-400 duration-300 hover:gap-2 hover:translate-x-3"
@@ -123,7 +147,7 @@ setPortfolio(portfolio+1);
               <div className="h-80 w-72 ">
                 {/* The Roadmap */}
 
-                <div className="h-80 w-72  bg-gradient-to-r from-blue-800 shadow-md shadow-blue-950 rounded-md transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-105">
+                <div className="h-96 w-72  bg-gradient-to-r from-blue-800 shadow-md shadow-blue-950 rounded-md transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-105">
                   <div className=" h-3/5 rounded-md">
                     <img
                       src={roadmap}
@@ -137,7 +161,12 @@ setPortfolio(portfolio+1);
                       Visit: <span className="text-blue-950">{roadMap}</span>
                     </h3>
                   </div>
-                  <div className="flex justify-between mx-3 mt-10">
+                  <div className=" flex justify-between mx-3 mt-4 text-white">
+                  <a onClick={roadTechFun}>
+                  <h3 className="text-white hover:text-orange-500 font-bold cursor-pointer">Tech Used{'>'}</h3></a>
+                  <p className= "text-sm">{roadTech}</p>
+                </div>
+                  <div className="flex justify-between mx-3 mt-7">
                     <button
                       onClick={theRoadmap}
                       class="flex items-center  bg-blue-500 text-white gap-1 px-4 py-1 cursor-pointer font-semibold tracking-widest rounded-md hover:bg-blue-400 duration-300 hover:gap-2 hover:translate-x-3"
@@ -166,7 +195,7 @@ setPortfolio(portfolio+1);
                 </div>
               </div>
               {/* Portfolio old */}
-              <div className="h-80 w-72  bg-gradient-to-r from-blue-800 shadow-md shadow-blue-950 rounded-md  transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-105">
+              <div className="h-96 w-72  bg-gradient-to-r from-blue-800 shadow-md shadow-blue-950 rounded-md  transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-105">
                 <div className=" h-3/5 rounded-md">
                   <img
                     src={oldPort}
@@ -180,7 +209,12 @@ setPortfolio(portfolio+1);
                     Visit: <span className="text-blue-950">{portfolio}</span>
                   </h3>
                 </div>
-                <div className="flex justify-between mx-3 mt-10">
+                <div className=" flex justify-between mx-3 mt-4 text-white">
+                  <a onClick={portfolioTechFun}>
+                  <h3 className="text-white hover:text-orange-500 font-bold cursor-pointer">Tech Used{'>'}</h3></a>
+                  <p className= "  text-sm">{portfolioTech}</p>
+                </div>
+                <div className="flex justify-between mx-3 mt-7">
                   <button
                     onClick={myPortfolio}
                     class="flex items-center  bg-blue-500 text-white gap-1 px-4 py-1 cursor-pointer font-semibold tracking-widest rounded-md hover:bg-blue-400 duration-300 hover:gap-2 hover:translate-x-3"
@@ -209,7 +243,7 @@ setPortfolio(portfolio+1);
               </div>
 
               {/* Calculator */}
-              <div className="h-80 w-72  bg-gradient-to-r from-blue-800 shadow-md shadow-blue-950 rounded-md transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-105">
+              <div className="h-96 w-72  bg-gradient-to-r from-blue-800 shadow-md shadow-blue-950 rounded-md transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-105">
                 <div className=" h-3/5 rounded-md">
                   <img
                     src={calculator}
@@ -223,7 +257,12 @@ setPortfolio(portfolio+1);
                     Visit: <span className="text-blue-950">{calculatorVisit}</span>
                   </h3>
                 </div>
-                <div className="flex justify-between mx-3 mt-10">
+                <div className=" flex justify-between mx-3 mt-4 text-white">
+                  <a onClick={calculatorTechFun}>
+                  <h3 className="text-white hover:text-orange-500 font-bold cursor-pointer">Tech Used{'>'}</h3></a>
+                  <p className= "  text-sm">{calculatorTech}</p>
+                </div>
+                <div className="flex justify-between mx-3 mt-7">
                   <button
                     onClick={myCalculator}
                     class="flex items-center  bg-blue-500 text-white gap-1 px-4 py-1 cursor-pointer font-semibold tracking-widest rounded-md hover:bg-blue-400 duration-300 hover:gap-2 hover:translate-x-3"
@@ -261,7 +300,7 @@ setPortfolio(portfolio+1);
             </div>
             <div className="h-full w-full  my-2 flex flex-wrap justify-evenly ">
               {/* api Project */}
-              <div className="h-80 w-72  bg-gradient-to-r from-blue-800 shadow-md shadow-blue-950 rounded-md transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-105 ">
+              <div className="h-96 w-72  bg-gradient-to-r from-blue-800 shadow-md shadow-blue-950 rounded-md transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-105 ">
                 <div className=" h-3/5 rounded-md">
                   <img
                     src={projectImg2}
@@ -275,7 +314,12 @@ setPortfolio(portfolio+1);
                     Visit: <span className="text-blue-950">{apifun}</span>
                   </h3>
                 </div>
-                <div className="flex justify-between mx-3 mt-10">
+                <div className=" flex justify-between mx-3 mt-4 text-white">
+                  <a onClick={apiTechFun}>
+                  <h3 className="text-white hover:text-orange-500 font-bold cursor-pointer">Tech Used{'>'}</h3></a>
+                  <p className= "  text-sm">{apiTech}</p>
+                </div>
+                <div className="flex justify-between mx-3 mt-7">
                   <button
                     onClick={myApi}
                     class="flex items-center  bg-blue-500 text-white gap-1 px-4 py-1 cursor-pointer font-semibold tracking-widest rounded-md hover:bg-blue-400 duration-300 hover:gap-2 hover:translate-x-3"
@@ -315,7 +359,7 @@ setPortfolio(portfolio+1);
             <div className="h-full w-full  flex justify-evenly flex-wrap gap-5 my-2  ">
               {/* password Generator */}
 
-              <div className="h-80 w-72  bg-gradient-to-r from-blue-800 shadow-md shadow-blue-950 rounded-md transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-105">
+              <div className="h-96 w-72  bg-gradient-to-r from-blue-800 shadow-md shadow-blue-950 rounded-md transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-105">
                 <div className=" h-3/5 rounded-md">
                   <img
                     src={passGen}
@@ -330,7 +374,12 @@ setPortfolio(portfolio+1);
                     <span className="text-blue-950 ">{count}</span>
                   </h3>
                 </div>
-                <div className="flex justify-between mx-3 mt-10">
+                <div className=" flex justify-between mx-3 mt-4 text-white">
+                  <a onClick={codeTechFun}>
+                  <h3 className="text-white hover:text-orange-500 font-bold cursor-pointer">Tech Used{'>'}</h3></a>
+                  <p className= "  text-sm">{codeTech}</p>
+                </div>
+                <div className="flex justify-between mx-3 mt-7">
                   <button
                     onClick={myVisit}
                     class="flex items-center  bg-blue-500 text-white gap-1 px-4 py-1 cursor-pointer font-semibold tracking-widest rounded-md hover:bg-blue-400 duration-300 hover:gap-2 hover:translate-x-3"
@@ -358,7 +407,7 @@ setPortfolio(portfolio+1);
                 </div>
               </div>
               {/* BMI Calculator */}
-              <div className="h-80 w-72  bg-gradient-to-r from-blue-800 shadow-md shadow-blue-950 rounded-md transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-105 ">
+              <div className="h-96 w-72  bg-gradient-to-r from-blue-800 shadow-md shadow-blue-950 rounded-md transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-105 ">
                 <div className=" h-3/5 rounded-md">
                   <img src={bmi} alt="" className="h-full w-full rounded-md" />
                 </div>
@@ -368,7 +417,12 @@ setPortfolio(portfolio+1);
                     Visit: <span className="text-blue-950">{count}</span>{" "}
                   </h3>
                 </div>
-                <div className="flex justify-between mx-3 mt-10">
+                <div className=" flex justify-between mx-3 mt-4 text-white">
+                  <a onClick={codeTechFun}>
+                  <h3 className="text-white hover:text-orange-500 font-bold cursor-pointer">Tech Used{'>'}</h3></a>
+                  <p className= "  text-sm">{codeTech}</p>
+                </div>
+                <div className="flex justify-between mx-3 mt-7">
                   <button
                     onClick={myVisit}
                     class="flex items-center  bg-blue-500 text-white gap-1 px-4 py-1 cursor-pointer font-semibold tracking-widest rounded-md hover:bg-blue-400 duration-300 hover:gap-2 hover:translate-x-3"
@@ -396,7 +450,7 @@ setPortfolio(portfolio+1);
                 </div>
               </div>
               {/* star,acoodian */}
-              <div className="h-80 w-72  bg-gradient-to-r from-blue-800 shadow-md shadow-blue-950 rounded-md transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-105">
+              <div className="h-96 w-72  bg-gradient-to-r from-blue-800 shadow-md shadow-blue-950 rounded-md transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-105">
                 <div className=" h-3/5 rounded-md">
                   <img src={star} alt="" className="h-full w-full rounded-md" />
                 </div>
@@ -406,7 +460,12 @@ setPortfolio(portfolio+1);
                     Visit: <span className="text-blue-950"> {count}</span>
                   </h3>
                 </div>
-                <div className="flex justify-between mx-3 mt-10">
+                <div className=" flex justify-between mx-3 mt-4 text-white">
+                  <a onClick={codeTechFun}>
+                  <h3 className="text-white hover:text-orange-500 font-bold cursor-pointer">Tech Used{'>'}</h3></a>
+                  <p className= "  text-sm">{codeTech}</p>
+                </div>
+                <div className="flex justify-between mx-3 mt-7">
                   <button
                     onClick={myVisit}
                     class="flex items-center  bg-blue-500 text-white gap-1 px-4 py-1 cursor-pointer font-semibold tracking-widest rounded-md hover:bg-blue-400 duration-300 hover:gap-2 hover:translate-x-3"
@@ -434,7 +493,7 @@ setPortfolio(portfolio+1);
                 </div>
               </div>
               {/* Guess Number */}
-              <div className="h-80 w-72  bg-gradient-to-r from-blue-800 shadow-md shadow-blue-950 rounded-md transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-105 ">
+              <div className="h-96 w-72  bg-gradient-to-r from-blue-800 shadow-md shadow-blue-950 rounded-md transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-105 ">
                 <div className=" h-3/5 rounded-md">
                   <img
                     src={guessNumber}
@@ -448,7 +507,12 @@ setPortfolio(portfolio+1);
                     Visit: <span className="text-blue-950">{count}</span>{" "}
                   </h3>
                 </div>
-                <div className="flex justify-between mx-3 mt-10">
+                <div className=" flex justify-between mx-3 mt-4 text-white">
+                  <a onClick={codeTechFun}>
+                  <h3 className="text-white hover:text-orange-500 font-bold cursor-pointer">Tech Used{'>'}</h3></a>
+                  <p className= "  text-sm">{codeTech}</p>
+                </div>
+                <div className="flex justify-between mx-3 mt-7">
                   <button
                     onClick={myVisit}
                     class="flex items-center  bg-blue-500 text-white gap-1 px-4 py-1 cursor-pointer font-semibold tracking-widest rounded-md hover:bg-blue-400 duration-300 hover:gap-2 hover:translate-x-3"

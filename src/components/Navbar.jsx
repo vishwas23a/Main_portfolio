@@ -12,6 +12,9 @@ function Navbar() {
   const Insta=()=>{
     window.open("https://www.instagram.com/vishwas_23a/")
   }
+  const Twitter=()=>{
+    window.open("https://twitter.com/Vishwas2313")
+  }
 
   return (
     <>
@@ -23,7 +26,7 @@ function Navbar() {
             <span className=" text-orange-500 ">V</span>erma
           </h1>
         </div>
-        <div className=" flex justify-center  items-center ml-32  ">
+        <div className=" flex justify-center  items-center ml-24  ">
           <ul className="flex gap-10 flex-wrap  ">
             <NavLink to="/" className={({isActive})=>isActive?"text-orange-500":"text-gray-400"}>
               {" "}
@@ -37,6 +40,10 @@ function Navbar() {
                 Projects
               </li>
             </NavLink>
+            <NavLink to="Skills" className={({isActive})=>isActive?"text-orange-500":"text-gray-400"}>
+              <li className=" hover:text-orange-500">
+              Skills
+            </li></NavLink>
             <NavLink to="Experience" className={({isActive})=>isActive?"text-orange-500":"text-gray-400"}>
               <li className=" hover:text-orange-500">
               Experience
@@ -52,16 +59,16 @@ function Navbar() {
         <div className=" flex gap-5 items-center  ">
           <ul className="flex gap-3 items-center text-gray-100 text-2xl ">
             <li>|</li>
-            <li onClick={git} className=" hover:text-orange-400 cursor-pointer transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110">
+            <li onClick={git} className=" hover:text-orange-500 cursor-pointer transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110">
               <FaGithub />
             </li>
-            <li onClick={LinkedIn} className=" hover:text-orange-400 cursor-pointer transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110">
+            <li onClick={LinkedIn} className=" hover:text-orange-500 cursor-pointer transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110">
               <FaLinkedin />
             </li>
-            <li onClick={Insta} className=" hover:text-orange-400 cursor-pointer transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110">
+            <li onClick={Insta} className=" hover:text-orange-500 cursor-pointer transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110">
               <FaInstagram />
             </li>
-            <li onClick={Insta} className=" hover:text-orange-400 cursor-pointer transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110">
+            <li onClick={Twitter} className=" hover:text-orange-500 cursor-pointer transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110">
               <FaXTwitter />
             </li>
           </ul>
