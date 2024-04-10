@@ -18,6 +18,7 @@ function Navbar() {
 
   return (
     <>
+   
     <div >
       <div className=" bg-blue-950 w-full h-16 flex justify-evenly fixed  z-20">
         <div className="  flex h-16 items-center">
@@ -55,7 +56,7 @@ function Navbar() {
             </li></NavLink> 
           </ul>
         </div>
-
+        
         <div className=" flex gap-5 items-center  ">
           <ul className="flex gap-3 items-center text-gray-100 text-2xl ">
             <li>|</li>
@@ -79,6 +80,7 @@ function Navbar() {
 
     </div>
     <Outlet/>
+   
     </>
   );
 }
