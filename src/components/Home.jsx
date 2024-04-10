@@ -19,7 +19,7 @@ export default function Home() {
             <h1 className='text-white text-4xl '>I'm Vishwas Verma</h1>
             <p className='text-2xl text-orange-500'> Full Stack Developer</p>
             <p className=' text-lg text-gray-300'>
-Passionate full stack developer with expertise in front-end and back-end technologies. Dedicated to crafting efficient, user-friendly web applications. Skilled in HTML/CSS, JavaScript, React, Node.js, and database management. Eager to innovate.</p>
+Passionate full stack developer with expertise in front-end and back-end technologies. Dedicated to crafting efficient, user-friendly web applications. Proficient in HTML/CSS, JavaScript, React, Node.js, and database management. Eager to explore...  </p>
             <button onClick={Resume}
   className="overflow-hidden relative w-32 p-2 h-12 bg-gray-800 text-white borde rounded-md text-xl font-bold cursor-pointer z-10 group"
 >
