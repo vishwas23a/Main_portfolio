@@ -1,30 +1,112 @@
-import React from 'react'
+import React, { useState } from "react";
+import SkillCard from "./SkillCard";
 
 export default function Skills() {
-  return (
-    <div>
-      <div className='flex h-dvh w-dvw bg-gradient-to-r from-blue-950 overflow-hidden   bg-orange-100 '>
-      <div className=" mt-16 w-80 h-full fixed flex-col  shadow-lg shadow-blue-950  ">
-          <a href="#">
-            {" "}
-            <button class=" group group-hover:before:duration-500 group-hover:after:duration-1000 after:duration-500 hover:border-sky-300  duration-500 before:duration-500 hover:duration-500     hover:after:-right-2 hover:before:top-8 hover:before:right-16 hover:after:scale-150 hover:after:blur-none hover:before:-bottom-8 hover:before:blur-none hover:bg-sky-300 hover:underline hover:underline-offset-4  origin-left hover:decoration-2 hover:text-sky-900 relative bg-sky-800 h-16 w-72 ml-2 my-2 rounded  border text-left p-3  text-gray-50 text-base font-bold   overflow-hidden  before:absolute before:w-12 before:h-12 before:content[''] before:right-1 before:top-1 before:z-10 before:bg-sky-400 before:rounded-full before:blur-lg  after:absolute after:z-10 after:w-20 after:h-20 after:content['']  after:bg-cyan-600 after:right-8 after:top-3 after:rounded-full after:blur">
-              Leet Code
-            </button>
-          </a>
-          <a href="#">
-            <button class="group group-hover:before:duration-500 group-hover:after:duration-1000 after:duration-500 hover:border-sky-300  duration-500 before:duration-500 hover:duration-500    hover:after:-right-2 hover:before:top-8 hover:before:right-16 hover:after:scale-150 hover:after:blur-none hover:before:-bottom-8 hover:before:blur-none hover:bg-sky-300 hover:underline hover:underline-offset-4  origin-left hover:decoration-2 hover:text-sky-900 relative bg-sky-800 h-16 w-72 my-2 rounded border text-left p-3 m-2 text-gray-50 text-base font-bold  overflow-hidden  before:absolute before:w-12 before:h-12 before:content[''] before:right-1 before:top-1 before:z-10 before:bg-sky-400 before:rounded-full before:blur-lg  after:absolute after:z-10 after:w-20 after:h-20 after:content['']  after:bg-cyan-600 after:right-8 after:top-3 after:rounded-full after:blur">
-              Hacker Rank
-            </button>
-          </a>
+  const [visible, setVisible] = useState({
+    Languages: false,
+    FrontendTools: false,
+    BackendTools: false,
+    ExtraTools: false,
+  });
 
-          <a href="#">
-            <button class="group group-hover:before:duration-500 group-hover:after:duration-1000 after:duration-500 hover:border-sky-300  duration-500 before:duration-500 hover:duration-500    hover:after:-right-2 hover:before:top-8 hover:before:right-16 hover:after:scale-150 hover:after:blur-none hover:before:-bottom-8 hover:before:blur-none hover:bg-sky-300 hover:underline hover:underline-offset-4  origin-left hover:decoration-2 hover:text-sky-900 relative bg-sky-800 h-16 w-72 my-2 rounded border text-left p-3 m-2 text-gray-50 text-base font-bold  overflow-hidden  before:absolute before:w-12 before:h-12 before:content[''] before:right-1 before:top-1 before:z-10 before:bg-sky-400 before:rounded-full before:blur-lg  after:absolute after:z-10 after:w-20 after:h-20 after:content['']  after:bg-cyan-600 after:right-8 after:top-3 after:rounded-full after:blur">
-              GitHub
-            </button>
-          </a>
+  const toggleVisibility = (key) => {
+    setVisible((prev) => ({
+      ...prev,
+      [key]: !prev[key],
+    }));
+  };
+
+  return (
+    <>
+      <div className="min-h-screen   flex w-full bg-gradient-to-r from-blue-950 bg-orange-100">
+        <div className="flex w-full mt-32 flex-wrap gap-10 justify-evenly">
+          <div  className="flex flex-col items-center">
+            <SkillCard
+              visibility={() => toggleVisibility("Languages")}
+              languageName="Languages"
+            />
+            <div
+              className={`bg-white rounded-b-xl   px-10 py-4 w-48 border-2 transition-opacity duration-300 ${
+                visible.Languages
+                  ? "opacity-100"
+                  : "opacity-0 pointer-events-none"
+              }`}
+            >
+              <ul>
+                <li>Java</li>
+                <li>JavaScript</li>
+                <li>C</li>
+              </ul>
+            </div>
+          </div>
+          <div  className="flex flex-col items-center">
+            <SkillCard
+              visibility={() => toggleVisibility("FrontendTools")}
+              languageName="Frontend Tools"
+            />
+            <div
+              className={`bg-white px-10 py-4  rounded-b-xl  w-48 transition-opacity duration-300 ${
+                visible.FrontendTools
+                  ? "opacity-100"
+                  : "opacity-0 pointer-events-none"
+              }`}
+            >
+              <ul>
+                <li>React Js</li>
+                <li>Tailwind</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Bootstrap</li>
+                <li>Framer Motion</li>
+              </ul>
+            </div>
+          </div>
+          <div  className="flex flex-col items-center">
+            <SkillCard
+              visibility={() => toggleVisibility("BackendTools")}
+              languageName="Backend Tools"
+            />
+            <div
+              className={`bg-white px-10  rounded-b-xl py-4 w-48 border-2 transition-opacity duration-300 ${
+                visible.BackendTools
+                  ? "opacity-100"
+                  : "opacity-0 pointer-events-none"
+              }`}
+            >
+              <ul>
+                <li>Node Js</li>
+                <li>Express Js</li>
+                <li>MongoDB</li>
+              </ul>
+            </div>
+          </div>
+          <div  className="flex flex-col items-center">
+            <SkillCard
+              visibility={() => toggleVisibility("ExtraTools")}
+              languageName="Extra Tools"
+            />
+           
+              <div
+                className={`bg-white px-10  rounded-b-xl py-4  w-48 border-2 transition-opacity duration-300 ${
+                  visible.ExtraTools
+                    ? "opacity-100"
+                    : "opacity-0 pointer-events-none"
+                }`}
+              >
+                <ul>
+                  <li>Visual Studio</li>
+                  <li>Postman</li>
+                  <li>Figma</li>
+                  <li>GitHub</li>
+                  <li>Vercel</li>
+                  <li>Netlify</li>
+                  <li>Render</li>
+                </ul>
+            
+            </div>
+          </div>
         </div>
       </div>
-    
-    </div>
-  )
+    </>
+  );
 }

@@ -27,8 +27,8 @@ function Navbar() {
             <span className=" text-orange-500 ">V</span>erma
           </h1>
         </div>
-        <div className=" flex justify-center  items-center ml-24  ">
-          <ul className="flex gap-10 flex-wrap  ">
+        <div className=" flex justify-center  items-center  ">
+          <ul className="flex gap-10 ">
             <NavLink to="/" className={({isActive})=>isActive?"text-orange-500":"text-gray-400"}>
               {" "}
               <li className=" hover:text-orange-500">
@@ -47,12 +47,12 @@ function Navbar() {
             </li></NavLink>
             <NavLink to="Experience" className={({isActive})=>isActive?"text-orange-500":"text-gray-400"}>
               <li className=" hover:text-orange-500">
-              Experience
+              Certification
             </li></NavLink>
     
            <NavLink to="Achivements" className={({isActive})=>isActive?"text-orange-500":"text-gray-400"}>
             <li className=" hover:text-orange-500" >
-              Achivements
+              Contact
             </li></NavLink> 
           </ul>
         </div>

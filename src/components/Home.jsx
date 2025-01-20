@@ -12,7 +12,7 @@ export default function Home() {
 
     <div >
   
-     <div className="flex h-dvh w-dvw bg-gradient-to-r from-blue-950 overflow-hidden  bg-orange-100 ">
+     <div className="flex min-h-screen w-full bg-gradient-to-r from-blue-950 overflow-hidden  bg-orange-100 ">
         <div className=" h-dvh w-1/2  ">
             <div className=' flex justify-center items-start gap-6 h-dvh flex-col ml-20 mt-14'>
             <h2 className='text-orange-500 text-3xl'>——Hello</h2>
