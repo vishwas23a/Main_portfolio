@@ -49,7 +49,7 @@ export default function Projects() {
         <ProjectCard 
         projectName="Fun Api"
         description="multiple API cards weather API,Gender Predict,Meme,Quote Generator"
-        projectLink="https://theroadmap01.netlify.app"
+        projectLink="https://some-fun-api.netlify.app"
         projectImg={funapiImg}
         />
 
